@@ -1,0 +1,58 @@
+<svg width="48" height="48" version="1.1" viewBox="0 0 12.7 12.7" xmlns="http://www.w3.org/2000/svg" xmlns:osb="http://www.openswatchbook.org/uri/2009/osb" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="linearGradient9694" x1="-211.81" x2="-208.74" y1="-221.14" y2="-221.14" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2a7fff" offset="0"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0,-284.3)">
+    <ellipse cx="6.35" cy="290.65" rx="6.35" ry="6.35" fill="none"/>
+    <rect transform="rotate(270)" x="-294.62" y="2.3706" width="7.9375" height=".52887" ry="0" fill="#2a7fff"/>
+    <rect transform="rotate(270)" x="-294.62" y="9.779" width="7.9375" height=".52887" ry="0" fill="#2a7fff"/>
+    <g transform="translate(5.4042e-7 .26459)" fill="#2a7fff">
+      <rect x="2.3812" y="285.89" width="7.9375" height=".52915" ry=".26457"/>
+      <rect transform="matrix(-.00111 -1 1 -1.2334e-6 0 0)" x="-286.42" y="2.0639" width=".26458" height=".52887" ry="0"/>
+      <rect transform="matrix(-.00111 -1 1 -1.2334e-6 0 0)" x="-286.42" y="9.4717" width=".26458" height=".52887" ry="0"/>
+    </g>
+    <g transform="rotate(180 6.35 290.52)" fill="#2a7fff">
+      <rect x="2.3812" y="285.89" width="7.9375" height=".52915" ry=".26457"/>
+      <rect transform="matrix(-.00111 -1 1 -1.2334e-6 0 0)" x="-286.42" y="2.0639" width=".26458" height=".52887" ry="0"/>
+      <rect transform="matrix(-.00111 -1 1 -1.2334e-6 0 0)" x="-286.42" y="9.4717" width=".26458" height=".52887" ry="0"/>
+    </g>
+    <g transform="translate(5.4042e-7 .26459)" fill="#2a7fff">
+      <rect transform="matrix(-6.7267e-5 1 1 2.0352e-5 0 0)" x="286.68" y="9.0153" width="2.9098" height=".52897" ry=".26449"/>
+      <rect transform="matrix(-1 6.4762e-5 -2.1158e-5 -1 0 0)" x="-9.5189" y="-287.21" width="3.0154" height=".52897" ry=".26449"/>
+      <rect transform="matrix(.74313 -.66915 -.74307 -.66921 0 0)" x="-211.81" y="-221.42" width="3.0747" height=".55894" ry="0"/>
+      <rect transform="matrix(.74313 -.66915 -.74307 -.66921 0 0)" x="-211.79" y="-220.48" width="3.0747" height=".55894" ry="0"/>
+    </g>
+    <g transform="matrix(-1 0 0 1 12.7 .26462)">
+      <rect transform="matrix(-6.7267e-5 1 1 2.0352e-5 0 0)" x="286.68" y="9.0153" width="2.9098" height=".52897" ry=".26449" fill="#2a7fff"/>
+      <rect transform="matrix(-1 6.4762e-5 -2.1158e-5 -1 0 0)" x="-9.5189" y="-287.21" width="3.0154" height=".52897" ry=".26449" fill="#2a7fff"/>
+      <rect transform="matrix(.74313 -.66915 -.74307 -.66921 0 0)" x="-211.81" y="-221.42" width="3.0747" height=".55894" ry="0" fill="url(#linearGradient9694)"/>
+      <rect transform="matrix(.74313 -.66915 -.74307 -.66921 0 0)" x="-211.79" y="-220.48" width="3.0747" height=".55894" ry="0" fill="#2a7fff"/>
+    </g>
+    <g transform="rotate(180 6.35 290.52)" fill="#2a7fff">
+      <rect transform="matrix(-6.7267e-5 1 1 2.0352e-5 0 0)" x="286.68" y="9.0153" width="2.9098" height=".52897" ry=".26449"/>
+      <rect transform="matrix(-1 6.4762e-5 -2.1158e-5 -1 0 0)" x="-9.5189" y="-287.21" width="3.0154" height=".52897" ry=".26449"/>
+      <rect transform="matrix(.74313 -.66915 -.74307 -.66921 0 0)" x="-211.81" y="-221.42" width="3.0747" height=".55894" ry="0"/>
+      <rect transform="matrix(.74313 -.66915 -.74307 -.66921 0 0)" x="-211.79" y="-220.48" width="3.0747" height=".55894" ry="0"/>
+    </g>
+    <g transform="matrix(1 0 0 -1 8.338e-7 581.04)" fill="#2a7fff">
+      <rect transform="matrix(-6.7267e-5 1 1 2.0352e-5 0 0)" x="286.68" y="9.0153" width="2.9098" height=".52897" ry=".26449"/>
+      <rect transform="matrix(-1 6.4762e-5 -2.1158e-5 -1 0 0)" x="-9.5189" y="-287.21" width="3.0154" height=".52897" ry=".26449"/>
+      <rect transform="matrix(.74313 -.66915 -.74307 -.66921 0 0)" x="-211.81" y="-221.42" width="3.0747" height=".55894" ry="0"/>
+      <rect transform="matrix(.74313 -.66915 -.74307 -.66921 0 0)" x="-211.79" y="-220.48" width="3.0747" height=".55894" ry="0"/>
+    </g>
+    <g fill="#2a7fff">
+      <rect x="6.0854" y="289.33" width=".52917" height="2.6458" rx="0" ry="0"/>
+      <rect x="5.8208" y="286.95" width="1.0583" height=".52917"/>
+      <rect x="5.8208" y="293.82" width="1.0583" height=".52915"/>
+      <ellipse cx="4.3656" cy="290.65" rx=".66146" ry=".66144"/>
+      <ellipse cx="8.3344" cy="290.65" rx=".66146" ry=".66144"/>
+      <rect x="5.5563" y="289.59" width="1.5875" height="2.1167" rx="0" ry="0"/>
+      <ellipse cx="1.1906" cy="290.65" rx=".66146" ry=".66144"/>
+      <ellipse cx="11.509" cy="290.65" rx=".66146" ry=".66144"/>
+      <ellipse cx="6.35" cy="288.14" rx=".39688" ry=".3969"/>
+      <ellipse cx="6.35" cy="293.16" rx=".39688" ry=".3969"/>
+    </g>
+  </g>
+</svg>
