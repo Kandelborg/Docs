@@ -24,12 +24,11 @@ const siteConfig = {
   title: 'MoNA', // Title for your website.
   tagline: 'A Secure, Fully-Fledged TS Starter Kit',
   // For github.io type URLs, you would set the url and baseUrl like:
-  url: 'https://docs.github.io',
   baseUrl: '/',
 
   projectName: 'Docs',
   organizationName: 'Kandelborg',
-  url: 'https://Kandelborg.github.io',
+  url: 'https://kandelborg.github.io',
   repoUrl: 'https://github.com/Kandelborg/Docs',
 
   // For no header links in the top nav bar -> headerLinks: [],
