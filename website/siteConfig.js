@@ -24,7 +24,7 @@ const siteConfig = {
   title: 'MoNA', // Title for your website.
   tagline: 'A Secure, Fully-Fledged TS Starter Kit',
   // For github.io type URLs, you would set the url and baseUrl like:
-  baseUrl: '/',
+  baseUrl: '/docs/',
 
   projectName: 'Docs',
   organizationName: 'Kandelborg',
@@ -81,6 +81,7 @@ const siteConfig = {
 
   // On page navigation for the current documentation page.
   onPageNav: 'separate',
+
   // No .html extensions for paths.
   cleanUrl: true,
 
