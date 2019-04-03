@@ -24,29 +24,27 @@ const siteConfig = {
   title: 'MoNA', // Title for your website.
   tagline: 'A Secure, Fully-Fledged TS Starter Kit',
   // For github.io type URLs, you would set the url and baseUrl like:
-  url: 'https://mona-docs.github.io',
+  url: 'https://docs.github.io',
   baseUrl: '/',
 
-  // Used for publishing and more
-  projectName: 'MoNA-starter-kit',
+  projectName: 'Docs',
   organizationName: 'Kandelborg',
-  // For top-level user or org sites, the organization is still the same.
-  // e.g., for the https://JoelMarcey.github.io site, it would be set like...
-  //   organizationName: 'JoelMarcey'
+  url: 'https://Kandelborg.github.io',
+  repoUrl: 'https://github.com/Kandelborg/Docs',
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'what-is-mona', label: 'Docs' },
-    { doc: 'usage/starting-a-project', label: 'Usage' },
+    { doc: 'usage/maintaining-a-project', label: 'Usage' },
     { blog: true, label: 'Blog' }
   ],
 
   // If you have users set above, you add it here:
-  users,
+  // users,
 
   /* path to images for header/footer */
   headerIcon: 'img/mona.svg',
-  footerIcon: 'img/mona.svg',
+  footerIcon: 'img/mona-no-fill.svg',
   favicon: 'img/favicon/favicon.ico',
 
   /* Colors for website */
@@ -73,7 +71,7 @@ const siteConfig = {
   copyright: `Copyright © ${new Date().getFullYear()} Mathias Kandelborg`,
 
   highlight: {
-    theme: 'solarized-dark'
+    theme: 'vs2015'
   },
   // Add custom scripts here that would be placed in <script> tags.
   scripts: [
@@ -95,10 +93,9 @@ const siteConfig = {
   enableUpdateBy: true,
 
   // Show documentation's last update time.
-  enableUpdateTime: true,
+  enableUpdateTime: true
 
   // You may provide arbitrary config keys to be used as needed by your
-  repoUrl: 'https://github.com/Kandelborg/MoNA-starter-kit'
 }
 
 module.exports = siteConfig

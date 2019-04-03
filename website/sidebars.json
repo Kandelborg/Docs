@@ -1,37 +1,29 @@
 {
   "docs": {
     "About": ["what-is-mona"],
-
-    "Setup": [
-      "setup/requirements",
-      "setup/editor",
-      "setup/accounts",
-      "setup/api",
-      "setup/development",
-      "setup/installation"
-    ],
-    "Features": [
-      "features/overview",
-      "features/awesome-editor",
-      "features/cloudinary",
-      "features/forms",
-      "features/graphql",
-      "features/internationalisation",
-      "features/security",
-      "features/theming"
-    ]
+    "Features": ["features/overview"]
   },
   "usage": {
+    "Setup": [
+      "setup/prerequisites",
+      "setup/installation",
+      "setup/accounts",
+      "setup/configuration",
+      "setup/editor",
+      "setup/development",
+      "setup/container"
+    ],
     "Usage": [
-      "usage/starting-a-project",
+      "usage/maintaining-a-project",
+      "usage/development",
       "usage/graphql-playground",
+      "deployment/server-access",
       "usage/up-to-date"
     ],
-    "Settings": [
-      "settings/general",
-      "settings/api",
-      "settings/i18n",
-      "settings/theming"
+    "Deployment": [
+      "deployment/server-setup",
+      "deployment/build",
+      "deployment/deploy"
     ]
   }
 }
