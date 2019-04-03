@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Editor · MoNA</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Right now there&#x27;s only instructions for setting up VS Code. Other editor setups will be added.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Editor · MoNA"/><meta property="og:type" content="website"/><meta property="og:url" content="https://Kandelborg.github.io/index.html"/><meta property="og:description" content="&lt;p&gt;Right now there&#x27;s only instructions for setting up VS Code. Other editor setups will be added.&lt;/p&gt;
+"/><meta property="og:image" content="https://Kandelborg.github.io/img/mona.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://Kandelborg.github.io/img/mona.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><link rel="alternate" type="application/atom+xml" href="https://Kandelborg.github.io/blog/atom.xml" title="MoNA Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://Kandelborg.github.io/blog/feed.xml" title="MoNA Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/mona.svg" alt="MoNA"/><h2 class="headerTitleWithLogo">MoNA</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/what-is-mona" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/docs/en/usage/maintaining-a-project" target="_self">Usage</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Setup</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Setup</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/setup/prerequisites">Prerequisites</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/accounts">Accounts</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/configuration">Configuration</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/setup/editor">Editor</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/development">Development</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/container">Container registries</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Usage</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/usage/maintaining-a-project">Maintaining a project</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage/development">Development</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage/graphql-playground">Graphql Playground</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment/server-access">Server access</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage/up-to-date">Keeping updated</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Deployment</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/deployment/server-setup">Server setup</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment/build">Build</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment/deploy">Deploy</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Editor</h1></header><article><div><span><p>Right now there's only instructions for setting up VS Code. Other editor setups will be added.</p>
+<p>Go to the <a href="#overview-of-essential-extensions">overview</a> for a list of extensions used.</p>
+<hr>
+<p>The settings in <code>/.vscode/settings.json</code> are all you need for a great developer experience.
+Make sure those are the ones being used, or you know what you're doing.</p>
+<ol>
+<li>Install the extensions via <a href="#essential-extensions">the provided commands</a></li>
+</ol>
+<h2><a class="anchor" aria-hidden="true" id="essential-extensions"></a><a href="#essential-extensions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Essential extensions</h2>
+<p>These are essential for the developer experience in VS Code.</p>
+<p>Run the following commands in a terminal:</p>
+</span></div><div class="tabs"><div class="nav-tabs"><div class="nav-link active" id="2-tab" data-group="group_1" data-tab="tabpanel_2">VS Code</div><div class="nav-link" id="3-tab" data-group="group_1" data-tab="tabpanel_3">VS Code Insiders</div></div><div class="tab-content"><div class="tab-pane active" data-group="group_1" tabindex="-1" id="tabpanel_2"><div><span><pre><code class="hljs css language-bash">code --install-extension blanu.vscode-styled-jsx
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension EditorConfig.EditorConfig
+code --install-extension eg2.tslint
+code --install-extension esbenp.prettier-vscode
+code --install-extension ms-vscode.vscode-typescript-tslint-plugin
+code --install-extension pmneo.tsimporter
+</code></pre>
+</span></div></div><div class="tab-pane" data-group="group_1" tabindex="-1" id="tabpanel_3"><div><span><pre><code class="hljs css language-bash">code-insiders --install-extension blanu.vscode-styled-jsx
+code-insiders --install-extension dbaeumer.vscode-eslint
+code-insiders --install-extension EditorConfig.EditorConfig
+code-insiders --install-extension eg2.tslint
+code-insiders --install-extension esbenp.prettier-vscode
+code-insiders --install-extension ms-vscode.vscode-typescript-tslint-plugin
+code-insiders --install-extension pmneo.tsimporter
+</code></pre>
+</span></div></div></div></div><div><span><h2><a class="anchor" aria-hidden="true" id="overview-of-essential-extensions"></a><a href="#overview-of-essential-extensions" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Overview of essential extensions</h2>
+<p>This is a list containing each essential extension and reasoning behind using it.</p>
+<h3><a class="anchor" aria-hidden="true" id="eslint"></a><a href="#eslint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ESLint</h3>
+<p>For linting and formatting the few javascript files there'll be.</p>
+<p>This is also <em>really</em> useful when copying JS code for use in your project - before converting to TS, one could use these steps to consistently get started:</p>
+<ul>
+<li>Make a .js file</li>
+<li>Format the code</li>
+<li>Auto fix and/or resolve errors &amp; warnings</li>
+<li>Put comments if needed</li>
+</ul>
+<p>Now, the code is ready for a TS rework, which will be fast since the most basic mistakes and syntax errors are taken care of.</p>
+<h3><a class="anchor" aria-hidden="true" id="tslint"></a><a href="#tslint" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TSLint</h3>
+<p>For linting and formatting the TS code.</p>
+<h3><a class="anchor" aria-hidden="true" id="prettier"></a><a href="#prettier" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prettier</h3>
+<p>This is used in conjunction with the packages <code>prettier-tslint</code> &amp; <code>prettier-eslint</code>, in order to make formatting really smooth and (if wanted) configurable.</p>
+<p>It's also used for formatting files that aren't TS or JS.</p>
+<h3><a class="anchor" aria-hidden="true" id="editorconfig"></a><a href="#editorconfig" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>EditorConfig</h3>
+<p>So we all have a proper editor experience</p>
+<blockquote>
+<p>EditorConfig helps maintain consistent coding styles for multiple developers working on the same project across various editors and IDEs. The EditorConfig project consists of a file format for defining coding styles and a collection of text editor plugins that enable editors to read the file format and adhere to defined styles. EditorConfig files are easily readable and they work nicely with version control systems.</p>
+<p>– <a href="https://editorconfig.org/">EditorConfig webpage</a></p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="styled-jsx"></a><a href="#styled-jsx" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Styled-jsx</h3>
+<p>Syntax highlighting for CSS in JSX.</p>
+<p>Styled-jsx is a part of Next.js and makes it really easy to include third-party stylesheets in a SSR rendered app, where MUI is the main styling solution.</p>
+<h3><a class="anchor" aria-hidden="true" id="ts-importer"></a><a href="#ts-importer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>TS Importer</h3>
+<p>Makes it super easy and fast to include components and files when coding.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/3/2019 by Mathias Wøbbe</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/setup/configuration"><span class="arrow-prev">← </span><span>Configuration</span></a><a class="docs-next button" href="/docs/en/setup/development"><span>Development</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#essential-extensions">Essential extensions</a></li><li><a href="#overview-of-essential-extensions">Overview of essential extensions</a><ul class="toc-headings"><li><a href="#eslint">ESLint</a></li><li><a href="#tslint">TSLint</a></li><li><a href="#prettier">Prettier</a></li><li><a href="#editorconfig">EditorConfig</a></li><li><a href="#styled-jsx">Styled-jsx</a></li><li><a href="#ts-importer">TS Importer</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/mona-no-fill.svg" alt="MoNA" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/setup/installation">Getting Started</a><a href="/docs/en/features/overview">Features</a><a href="/docs/en/setup/prerequisites">Requirements</a></div><div><h5>Community</h5><a href="https://spectrum.chat/mona" target="_blank" rel="noreferrer noopener">Project Chat</a><a href="http://stackoverflow.com/questions/tagged/mona" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/Kandelborg/mona-starter-kit/" target="_blank" rel="noreferrer noopener">GitHub</a><a class="github-button" href="https://github.com/Kandelborg/Docs" data-icon="octicon-star" data-count-href="/MathiasKandelborg/MoNA-starter-kit/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Mathias Kandelborg</section></footer></div></body></html>

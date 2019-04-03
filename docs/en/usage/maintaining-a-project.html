@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Maintaining a project · MoNA</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;By going through a some easy steps, a new &amp;amp; personalized project will be ready for development!&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Maintaining a project · MoNA"/><meta property="og:type" content="website"/><meta property="og:url" content="https://Kandelborg.github.io/index.html"/><meta property="og:description" content="&lt;p&gt;By going through a some easy steps, a new &amp;amp; personalized project will be ready for development!&lt;/p&gt;
+"/><meta property="og:image" content="https://Kandelborg.github.io/img/mona.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://Kandelborg.github.io/img/mona.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><link rel="alternate" type="application/atom+xml" href="https://Kandelborg.github.io/blog/atom.xml" title="MoNA Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://Kandelborg.github.io/blog/feed.xml" title="MoNA Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/mona.svg" alt="MoNA"/><h2 class="headerTitleWithLogo">MoNA</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/what-is-mona" target="_self">Docs</a></li><li class="siteNavGroupActive siteNavItemActive"><a href="/docs/en/usage/maintaining-a-project" target="_self">Usage</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Usage</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Setup</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/setup/prerequisites">Prerequisites</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/accounts">Accounts</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/configuration">Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/editor">Editor</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/development">Development</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/container">Container registries</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Usage</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/usage/maintaining-a-project">Maintaining a project</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage/development">Development</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage/graphql-playground">Graphql Playground</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment/server-access">Server access</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage/up-to-date">Keeping updated</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Deployment</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/deployment/server-setup">Server setup</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment/build">Build</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment/deploy">Deploy</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Maintaining a project</h1></header><article><div><span><p>By going through a some easy steps, a new &amp; personalized project will be ready for development!</p>
+<p>A <a href="#reference">CLI tool</a> will soon make it incredibly easy to get started with a new MoNA project.</p>
+<p>By reading this guide, you'll have a better understanding of how to have the best experience while developing with MoNA.
+This document can be read from start to end, but also works as a reference.</p>
+<h2><a class="anchor" aria-hidden="true" id="creating-the-project"></a><a href="#creating-the-project" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating the project</h2>
+<p>When beginning to use MoNA, you should start a project from scratch.</p>
+<p>Having followed the <a href="/docs/en/setup/installation">installation</a> documentation, a directory structure is present.</p>
+<blockquote>
+<p>The following steps assumes the <a href="/docs/en/setup/installation#directory-structure">directory structure</a> present in the installation docs. Any structure is considered valid though.</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="website"></a><a href="#website" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>/website</code></h3>
+<p>This is the home of the MoNA project.</p>
+<ol>
+<li>Create a new git repository on Github, GitLab or somewhere else</li>
+<li>Go to the <code>website</code> folder in the project</li>
+<li>Add new repo as a <a href="#reference">remote</a></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="api"></a><a href="#api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>/api</code></h3>
+<p>This is the home of the GraphQL API made with Prisma.</p>
+<ol>
+<li>Create a new git repository on Github, GitLab or somewhere else</li>
+<li>Go to the <code>api</code> folder in the project</li>
+<li>Add new repo as a <a href="#reference">remote</a></li>
+</ol>
+<h3><a class="anchor" aria-hidden="true" id="configuration"></a><a href="#configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>/configuration</code></h3>
+<p>This is the home of configuration files used e.g. for initial server setup and nginx.</p>
+<ol>
+<li>Create the final new git repository - make sure it's <strong>private</strong></li>
+<li>Go to the <code>configuration</code> folder in the project</li>
+<li>Add new repo as a <a href="#reference">remote</a></li>
+</ol>
+<p>And there, everything is ready to go!</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="developing"></a><a href="#developing" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Developing</h2>
+<p>It is recommended to use a <a href="#reference">terminal multiplexer</a> like tmux for multiple bash sessions.
+Tmux is really nice because it has plugins to keep session state between reboots, enabling a fast startup every time.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="theme-ui-components"></a><a href="#theme-ui-components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Theme &amp; UI Components</h2>
+<p>MoNA uses Material-UI for UI components and global styling.</p>
+<p>There's one exception to this, simply for ease of use:</p>
+<ul>
+<li>Global styles are set in <code>_app.ts</code> with Styled-jsx to ensure constant globally available styles.</li>
+</ul>
+<p>This also means that besides the several available paradigms of Material-UI, Styled-jsx is also available!</p>
+<h3><a class="anchor" aria-hidden="true" id="themes"></a><a href="#themes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Themes</h3>
+<p>The MainTheme file contains the project theme definition. It's located in <code>website/util/themes/MainTheme.ts</code></p>
+<p>Some likely values to fiddle with is the <code>typography</code> object and the <code>primary</code> and <code>secondary</code> keys in the <code>palette</code> object.</p>
+<p>Changing values in the theme reflects in all components used by Material-UI, which ensures a global theme with possibility of component level styling.</p>
+<h3><a class="anchor" aria-hidden="true" id="components"></a><a href="#components" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Components</h3>
+<p>More information on theming and components can be found in the <a href="https://material-ui.com">Material-UI official documentation</a>.
+It's riddled with great examples and well thought out explanations.</p>
+<p>It really is a treat to navigate and find new ways to make customize components with the Material-UI docs.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="using-a-flat-import-structure"></a><a href="#using-a-flat-import-structure" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using a Flat Import Structure</h2>
+<p>With the help of tsconfig-paths and babel-plugin-module-resolver MoNA and KATS have a 'flat' import structure.</p>
+<p>This effectively means that developers don't have to define complex relative paths and can instead define consistent paths.</p>
+<p>So, Instead of this:</p>
+<p><code>import MyUtilFn from '../../../../utils/MyUtilFn'</code></p>
+<p>We get to write:</p>
+<p><code>import MyUtilFn from '@utils/MyUtilFn'</code></p>
+<p>This helps <em>a lot</em> with cognitive load.</p>
+<p>Pre-defined paths are much easier to remember than relative paths to every file, from <em>every file</em>.</p>
+<p>Paths for MoNA are found in <code>website/.babelrc</code> <em><strong>and</strong></em> <code>website/tsconfig.json</code>. Paths defined in these files are interconnected and should <strong>not</strong> be out of sync.</p>
+<p>Paths for KATS are found in <code>api/webpack.config.js</code> <em><strong>and</strong></em> <code>api/tsconfig.json</code>. Paths defined in these files are interconnected and should <strong>not</strong> be out of sync.</p>
+<p>Defining paths will be automated with CLI commands. Comming soon.</p>
+<p>Settings are in <code>@settings</code>, forms in <code>@forms</code> etc. which is easy to remember.
+This ensures faster development speed and less cognitive overhead when developing. It also makes it easy to show new project devs where specific functionality is located.
+No more spending a long time on understanding the structure, it's easily ready to use and reason about.</p>
+<p>Get to know the default paths, add your own paths if needed and feel the benefits of a flat import structure...
+Then be happy and continue coding, or go celebrate in your favorite way.
+I'm not sure where I was going with this sentence, so yeah, remember to have fun and be active!</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="making-committing-changes"></a><a href="#making-committing-changes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Making &amp; Committing Changes</h2>
+<p>Whenever changes are made and committed, you push them to the new origins.
+This way it's easy to get crucial updates from the official repositories, while still making a custom application.</p>
+<p>Using a GUI for the most annoying git things can speed things up a lot.
+Especially if branches is something you use.
+With a visual representation and drag &amp; drop features, some things take 2 seconds in a GUI vs 30 seconds by writing commands.
+That's hard to argue against.</p>
+<p>Mathias Kandelborg recommends <a href="https://gitkraken.com/git-client">GitKraken</a> as a git GUI.
+It's free to use, has dark theme and amazing git capabilities.
+They also have excellent documentation and even videos for a lot of the features.</p>
+<p>Because we're using commitizen by default, GitKraken isn't good for actually committing.
+Unless you know the rules by heart or use a commit template, then it gets a bit easier.
+That being said, it's the <em>only</em> thing not possible with GitKraken for general usage.</p>
+<p>When committing changes run <code>npm run cz</code>. 'cz' stands for commitizen and runs the commitizen-cli default command.
+This opens an interactive prompt where useful information is displayed for each option.
+Pick relevant options by choosing or pressing enter for defaults, and watch as the commit and staged files gets linted.</p>
+<hr>
+<p><strong>This guide will be completed with time. I'm sorry I haven't gotten further yet.</strong></p>
+<p><strong>If you have any requests, think something is poorly explained or want to help out; don't hesitate to open an issue or PR. Those are much appreciated!</strong></p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="reference"></a><a href="#reference" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Reference</h2>
+<h3><a class="anchor" aria-hidden="true" id="remote-url"></a><a href="#remote-url" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Remote URL</h3>
+<blockquote>
+<p>A remote URL is Git's fancy way of saying &quot;the place where your code is stored.&quot; That URL could be your repository on GitHub, or another user's fork, or even on a completely different server.
+<code>git remote add origin &lt;REMOTE_URL&gt;</code></p>
+<p>– <a href="https://help.github.com/articles/about-remote-repositories">Github help</a></p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="cli-tool"></a><a href="#cli-tool" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CLI tool</h3>
+<blockquote>
+<p>A <a href="https://en.wikipedia.org/wiki/Command-line_interface">CLI</a> tool is a program that automates or executes a task or outputs something.
+In short: it does <em>something</em>. However the tool does its thing, if it can take arguments, these execute via command-line arguments from <a href="https://en.wikipedia.org/wiki/Standard_streams#Standard_input_(stdin)">stdin</a> or programmatically</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="terminal-multiplexer"></a><a href="#terminal-multiplexer" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Terminal multiplexer</h3>
+<blockquote>
+<p>A program that runs several separate bash sessions in a single terminal window.</p>
+</blockquote>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/3/2019 by Mathias Wøbbe</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/setup/container"><span class="arrow-prev">← </span><span>Container registries</span></a><a class="docs-next button" href="/docs/en/usage/development"><span>Development</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#creating-the-project">Creating the project</a><ul class="toc-headings"><li><a href="#website"><code>/website</code></a></li><li><a href="#api"><code>/api</code></a></li><li><a href="#configuration"><code>/configuration</code></a></li></ul></li><li><a href="#developing">Developing</a></li><li><a href="#theme-ui-components">Theme &amp; UI Components</a><ul class="toc-headings"><li><a href="#themes">Themes</a></li><li><a href="#components">Components</a></li></ul></li><li><a href="#using-a-flat-import-structure">Using a Flat Import Structure</a></li><li><a href="#making-committing-changes">Making &amp; Committing Changes</a></li><li><a href="#reference">Reference</a><ul class="toc-headings"><li><a href="#remote-url">Remote URL</a></li><li><a href="#cli-tool">CLI tool</a></li><li><a href="#terminal-multiplexer">Terminal multiplexer</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/mona-no-fill.svg" alt="MoNA" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/setup/installation">Getting Started</a><a href="/docs/en/features/overview">Features</a><a href="/docs/en/setup/prerequisites">Requirements</a></div><div><h5>Community</h5><a href="https://spectrum.chat/mona" target="_blank" rel="noreferrer noopener">Project Chat</a><a href="http://stackoverflow.com/questions/tagged/mona" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/Kandelborg/mona-starter-kit/" target="_blank" rel="noreferrer noopener">GitHub</a><a class="github-button" href="https://github.com/Kandelborg/Docs" data-icon="octicon-star" data-count-href="/MathiasKandelborg/MoNA-starter-kit/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Mathias Kandelborg</section></footer></div></body></html>

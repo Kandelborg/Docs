@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Server setup · MoNA</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;By following this guide, you&#x27;ll to get two secure &lt;a href=&quot;https://www.ubuntu.com/download/server&quot;&gt;Ubuntu Server 18.04&lt;/a&gt; servers running in the cloud and ready for use.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Server setup · MoNA"/><meta property="og:type" content="website"/><meta property="og:url" content="https://Kandelborg.github.io/index.html"/><meta property="og:description" content="&lt;p&gt;By following this guide, you&#x27;ll to get two secure &lt;a href=&quot;https://www.ubuntu.com/download/server&quot;&gt;Ubuntu Server 18.04&lt;/a&gt; servers running in the cloud and ready for use.&lt;/p&gt;
+"/><meta property="og:image" content="https://Kandelborg.github.io/img/mona.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://Kandelborg.github.io/img/mona.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><link rel="alternate" type="application/atom+xml" href="https://Kandelborg.github.io/blog/atom.xml" title="MoNA Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://Kandelborg.github.io/blog/feed.xml" title="MoNA Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/mona.svg" alt="MoNA"/><h2 class="headerTitleWithLogo">MoNA</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/what-is-mona" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/docs/en/usage/maintaining-a-project" target="_self">Usage</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Deployment</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Setup</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/setup/prerequisites">Prerequisites</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/accounts">Accounts</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/configuration">Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/editor">Editor</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/development">Development</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/container">Container registries</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Usage</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/usage/maintaining-a-project">Maintaining a project</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage/development">Development</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage/graphql-playground">Graphql Playground</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment/server-access">Server access</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage/up-to-date">Keeping updated</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Deployment</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/deployment/server-setup">Server setup</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment/build">Build</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment/deploy">Deploy</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Server setup</h1></header><article><div><span><p>By following this guide, you'll to get two secure <a href="https://www.ubuntu.com/download/server">Ubuntu Server 18.04</a> servers running in the cloud and ready for use.</p>
+<p>This is compatible with any environment and OS.</p>
+<p>This is made possible with a <a href="https://en.wikipedia.org/wiki/Virtual_machine">virtual machine</a>(VM)
+that ensures everybody can achieve the same results, and never worry about configuring their own environment.</p>
+<h2><a class="anchor" aria-hidden="true" id="prerequisites"></a><a href="#prerequisites" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Prerequisites</h2>
+<blockquote>
+<p><strong>NOTE:</strong> If you already use a unix or unix based based OS,
+you don't need to install the VM and can jump straight to creating <a href="#create-ssh-key-pairs">key-pairs</a></p>
+</blockquote>
+<ul>
+<li><a href="https://www.virtualbox.org/">VirtualBox</a></li>
+<li><a href="https://www.vagrantup.com/downloads.html">Vagrant</a></li>
+</ul>
+<p>If they aren't installed, it's easy to do by going to their websites and following the instructions for your OS.</p>
+<ul>
+<li>The <code>ssh-keygen</code> command or equivalent</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="vm-setup"></a><a href="#vm-setup" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>VM Setup</h3>
+<p>This part is only for people needing the <code>ssh-keygen</code> command or a unix or unix-like OS.</p>
+<p>Open a terminal and make a new project folder, then download the server-configuration repository:</p>
+<pre><code class="hljs css language-bash">mkdir vm-server-setup &amp;&amp; <span class="hljs-built_in">cd</span> vm-server-setup
+git <span class="hljs-built_in">clone</span> https://github.com/MathiasKandelborg/server-configuration.git .
+</code></pre>
+<p>Now it's time to setup the VM.</p>
+<p>The initial setup generally takes some time as the computer is downloading, installing <em>and running</em> an entire OS.
+This only needs to be done once though. After this, the VM has been created and doesn't take long to boot:</p>
+<pre><code class="hljs css language-bash">vagrant up
+</code></pre>
+<p>When the installation processes are done, access the VM:</p>
+<pre><code class="hljs css language-bash">vagrant ssh
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="create-ssh-key-pairs"></a><a href="#create-ssh-key-pairs" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create SSH key-pairs</h2>
+<p>We'll create the key-pair with some extra flags for more security. We're also telling the program to create a 4096bit key instead of the less secure 2048bit</p>
+<ul>
+<li>Create api server key-pair</li>
+<li>Create website server key-pair</li>
+</ul>
+<p>Change <code>api_server_id</code> &amp; <code>website_server_id</code> to something relevant. This will be the name of the key-pairs:</p>
+<pre><code class="hljs css language-bash">ssh-keygen -f ~/generated-keys/api_server_id -t rsa -b 4096
+
+ssh-keygen -f ~/generated-keys/website_server_id -t rsa -b 4096
+</code></pre>
+<blockquote>
+<p>press 'enter' twice for no password.</p>
+<p>You can choose a password if you want to, it's obviously good for security.
+The password is needed every time the key is used.</p>
+</blockquote>
+<p>You might have noticed that four files popped up inside a <code>generated-keys</code> folder in the home directory, see them by running <code>ls ~/generated-keys</code>.</p>
+<p>The .pub files are for registering the key-pair in various places.</p>
+<p>The others are <strong><em>highly confidential</em></strong>, if they become compromised you have no defence against hackers.</p>
+<p>This particular compromise means that your database(s), login credentials, command history and everything else on your server is free to access for <em>anyone</em>.
+It might also enable attacks on a personal/work machine as they have complete control over the server and that it does.</p>
+<h4><a class="anchor" aria-hidden="true" id="you-are-the-sole-possessor-of-your-confidential-files-make-sure-to-handle-them-that-way"></a><a href="#you-are-the-sole-possessor-of-your-confidential-files-make-sure-to-handle-them-that-way" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>You are the <em>sole possessor</em> of your confidential files. Make sure to handle them that way</h4>
+<p>This is a secure server setup and you <em>need</em> to figure out how <strong>you</strong> are going to handle your files in a secure manner.</p>
+<p>I cannot give any definitive suggestions to secure file &amp; password handling, because there's so many situations to take into account.
+It's advised take some time to learn about file &amp; group permissions on computers along with proper data-handling practices.</p>
+<p>One good solution to file transfer is <a href="http://manpages.ubuntu.com/manpages/bionic/en/man1/scp.1.html">scp</a>, as it uses SSH and asks for passwords if set.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="cloud-init-overview"></a><a href="#cloud-init-overview" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Cloud-init overview</h2>
+<p>The cloud-init file is where every install and execute command is defined.
+They're executed on first boot.</p>
+<p>Two servers are being made. One for the API and one for the website &amp; api client.
+To ensure great default security, two cloud-init files exists.
+The only difference being a few settings in the firewall.</p>
+<p>Here's an overlook of the instructions defined in <strong>both</strong> cloud-init files:</p>
+<ul>
+<li>Set the main user to 'admin'</li>
+<li>Disable root login functionality</li>
+<li>Disable password login</li>
+<li>Disable running admin commands without sudo</li>
+<li>Define authorized SSH keys for user 'admin'</li>
+<li>Enable login for new user 'admin' <strong>only</strong></li>
+<li>Setup a firewall using UFW
+<ul>
+<li>Disable all ingoing connections</li>
+<li>Disable default SSH port to defer generic hacking attempts</li>
+<li>Enable port 2222 with rate-limiting</li>
+<li>Enable NTP ports</li>
+</ul></li>
+<li>Set timezone to UTC</li>
+</ul>
+<p>In <code>configuration/website/cloud-init</code>:</p>
+<ul>
+<li>Enable www, HTTP &amp; HTTPS ports</li>
+<li>Enable port 4657</li>
+</ul>
+<p>In <code>configuration/api/cloud-init</code>:</p>
+<ul>
+<li>Enable port 4466</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="configuring-cloud-init"></a><a href="#configuring-cloud-init" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuring cloud-init</h3>
+<p>The only thing we need to do right now, is input the newly generated SSH key:</p>
+<p>Changing values in cloud-init or <code>.yaml</code> files in genereal can be bothersome because of indentation, spaces and weird characters.</p>
+<p>It's <strong>highly recommended</strong> to use find &amp; replace for any action regarding cloud-init files.</p>
+<ul>
+<li>Copy the contents of server_id.pub</li>
+</ul>
+<pre><code class="hljs css language-bash">cat ~/generated-keys/server_id-pub
+</code></pre>
+<ul>
+<li>Open the <code>cloud-init</code> files</li>
+<li>Input <em>all</em> the contents of server_id.pub on line 8, from column 9 in both files</li>
+<li><strong>Optional:</strong> Change username, which is done simultaneously on lines 3 &amp; 12</li>
+</ul>
+<blockquote>
+<p>If you choose to change the name of the user, remember to change it on line 12 as well.
+This is where we tell the server which users are allowed to connect to the server.</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="changing-ssh-port"></a><a href="#changing-ssh-port" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Changing SSH Port</h2>
+<p>Remember to these steps <em>before</em> creating the server. Otherwise they have no effect.</p>
+<p>For some clarification on why or why not to use custom SSH ports, <a href="https://www.quora.com/Is-changing-the-SSHD-default-port-a-good-practice">read this</a>.</p>
+<p><strong>Example</strong> <em>SSH port changed to 9001 by editing Line 10 &amp; 16 from terminal</em>:</p>
+<pre><code class="hljs css language-bash">line 10: sed -i -e <span class="hljs-string">'/^#Port 22/s/^.*$/Port 9001/'</span> /etc/ssh/sshd_config
+
+ ...
+ ...
+
+line 16: ufw allow 9001/tcp
+</code></pre>
+<p>Which would result in having to use port 9001, when connecting to the server.</p>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="creating-the-servers"></a><a href="#creating-the-servers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating the servers</h2>
+<p>If you don't have a <a href="https://www.digitalocean.com/">Digital Ocean</a> account already, go make one. Here's my <a href="https://m.do.co/c/acc19c3cd28f">(100USD for 60 days referral link)</a>.</p>
+<ol>
+<li>Log into your account</li>
+<li>Press the green button with the words 'create' in the top-right corner</li>
+<li>Choose the 'Droplets' option</li>
+<li>At the start in the images dropdown-menu choose <code>Ubuntu 18.04 x64</code></li>
+<li>Choose your preferred server size (the smallest is fine)</li>
+<li>Skip the sections about enabling backups and adding volumes</li>
+<li>Chose a data-center region closest to your location</li>
+<li>Select the following additional options:
+<ul>
+<li>Private networking</li>
+<li>IPv6</li>
+<li>Monitoring</li>
+<li>User data</li>
+</ul></li>
+</ol>
+<p>After having chosen 'user data', a big text-box show up. This box is actually where most of the magic happens. Let's put something in it!</p>
+<ul>
+<li>Copy the contents of your customized cloud-init file</li>
+<li>Paste the file contents into the 'user data' text-box</li>
+</ul>
+<blockquote>
+<p>You can happily skip the SSH key section, as that functionality is what we've just done.</p>
+<p>We're just storing the key in our own, local environment. <strong><em>Not</em></strong> on a server somewhere we don't have control over it.</p>
+</blockquote>
+<p>In the last section 'Finalize and create', you can define how many droplets you want and an optional hostname for the server.</p>
+<p>Now for the last and hardest part of setting up a Digital Ocean droplet... I'm unsure if any of us are ready for this:</p>
+<ul>
+<li>Click create!</li>
+</ul>
+<p>It's going to take a minute or two before the droplet is accessible with the custom configuration.
+In the meantime, the other server can be setup in the exact same manner. The only difference being the cloud-init file used for setup.</p>
+<p>After a little while, the servers are ready for logging in. Follow the <a href="/deployment/server-access">server access section</a> to learn more about that.</p>
+<p>We're now ready for deployment! Let's go build the applications.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/3/2019 by Mathias Wøbbe</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/usage/up-to-date"><span class="arrow-prev">← </span><span>Keeping updated</span></a><a class="docs-next button" href="/docs/en/deployment/build"><span>Build</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#prerequisites">Prerequisites</a><ul class="toc-headings"><li><a href="#vm-setup">VM Setup</a></li></ul></li><li><a href="#create-ssh-key-pairs">Create SSH key-pairs</a></li><li><a href="#cloud-init-overview">Cloud-init overview</a><ul class="toc-headings"><li><a href="#configuring-cloud-init">Configuring cloud-init</a></li></ul></li><li><a href="#changing-ssh-port">Changing SSH Port</a></li><li><a href="#creating-the-servers">Creating the servers</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/mona-no-fill.svg" alt="MoNA" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/setup/installation">Getting Started</a><a href="/docs/en/features/overview">Features</a><a href="/docs/en/setup/prerequisites">Requirements</a></div><div><h5>Community</h5><a href="https://spectrum.chat/mona" target="_blank" rel="noreferrer noopener">Project Chat</a><a href="http://stackoverflow.com/questions/tagged/mona" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/Kandelborg/mona-starter-kit/" target="_blank" rel="noreferrer noopener">GitHub</a><a class="github-button" href="https://github.com/Kandelborg/Docs" data-icon="octicon-star" data-count-href="/MathiasKandelborg/MoNA-starter-kit/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Mathias Kandelborg</section></footer></div></body></html>

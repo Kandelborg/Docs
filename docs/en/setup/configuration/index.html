@@ -1,0 +1,140 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Configuration · MoNA</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="&lt;p&gt;Edit the configuration files in order to make a unique project with the functionality MoNA provides.&lt;/p&gt;
+"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Configuration · MoNA"/><meta property="og:type" content="website"/><meta property="og:url" content="https://Kandelborg.github.io/index.html"/><meta property="og:description" content="&lt;p&gt;Edit the configuration files in order to make a unique project with the functionality MoNA provides.&lt;/p&gt;
+"/><meta property="og:image" content="https://Kandelborg.github.io/img/mona.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://Kandelborg.github.io/img/mona.png"/><link rel="shortcut icon" href="/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><link rel="alternate" type="application/atom+xml" href="https://Kandelborg.github.io/blog/atom.xml" title="MoNA Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://Kandelborg.github.io/blog/feed.xml" title="MoNA Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/en"><img class="logo" src="/img/mona.svg" alt="MoNA"/><h2 class="headerTitleWithLogo">MoNA</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/en/what-is-mona" target="_self">Docs</a></li><li class="siteNavGroupActive"><a href="/docs/en/usage/maintaining-a-project" target="_self">Usage</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Setup</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Setup</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/setup/prerequisites">Prerequisites</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/installation">Installation</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/accounts">Accounts</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/en/setup/configuration">Configuration</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/editor">Editor</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/development">Development</a></li><li class="navListItem"><a class="navItem" href="/docs/en/setup/container">Container registries</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Usage</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/usage/maintaining-a-project">Maintaining a project</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage/development">Development</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage/graphql-playground">Graphql Playground</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment/server-access">Server access</a></li><li class="navListItem"><a class="navItem" href="/docs/en/usage/up-to-date">Keeping updated</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Deployment</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/en/deployment/server-setup">Server setup</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment/build">Build</a></li><li class="navListItem"><a class="navItem" href="/docs/en/deployment/deploy">Deploy</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Configuration</h1></header><article><div><span><p>Edit the configuration files in order to make a unique project with the functionality MoNA provides.</p>
+<h2><a class="anchor" aria-hidden="true" id="website"></a><a href="#website" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Website</h2>
+<h3><a class="anchor" aria-hidden="true" id="envexample-https-githubcom-kandelborg-mona-starter-kit-blob-master-envexample"></a><a href="#envexample-https-githubcom-kandelborg-mona-starter-kit-blob-master-envexample" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/Kandelborg/MoNA-starter-kit/blob/master/.env.example">.env.example</a></h3>
+<ul>
+<li>Ignore this file by renaming to <code>.env</code></li>
+</ul>
+<blockquote>
+<p><strong>Never commit sensitive information to versioning software</strong> - use other means of sharing sensitive information like <a href="https://bitwarden.com/">Bitwarden</a></p>
+</blockquote>
+<table>
+<thead>
+<tr><th>Variable</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>DOMAIN</td><td>Domain of website when in production</td></tr>
+<tr><td>PORT</td><td>Which port the website runs on</td></tr>
+<tr><td><strong>Cloudinary Variables:</strong></td><td>-------------------------------------------------</td></tr>
+<tr><td>CLOUD_NAMES</td><td>Cloud names in use in website</td></tr>
+<tr><td>API_DOMAIN</td><td>Domain of GraphQL endpoint</td></tr>
+<tr><td>API_TOKEN</td><td>No apparent use</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="manifestjson-https-githubcom-kandelborg-mona-starter-kit-blob-master-static-manifestjson"></a><a href="#manifestjson-https-githubcom-kandelborg-mona-starter-kit-blob-master-static-manifestjson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/Kandelborg/MoNA-starter-kit/blob/master/static/manifest.json">manifest.json</a></h3>
+<p>This file defines how an installed PWA behaves and looks.</p>
+<ul>
+<li>Name</li>
+<li>Short name</li>
+<li>Description</li>
+<li>Theme color</li>
+<li>Background color (for the splash screen)</li>
+<li>Language</li>
+<li>Icons</li>
+</ul>
+<p>All the available options for a web app manifest is <a href="https://developer.mozilla.org/en-US/docs/Web/Manifest#Members">available at MDN</a>. The values in our manifest is enough to get started.</p>
+<h3><a class="anchor" aria-hidden="true" id="routingts-https-githubcom-kandelborg-mona-starter-kit-blob-master-server-routingts"></a><a href="#routingts-https-githubcom-kandelborg-mona-starter-kit-blob-master-server-routingts" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/Kandelborg/MoNA-starter-kit/blob/master/server/routing.ts">routing.ts</a></h3>
+<p>All routes are defined here.</p>
+<p>If you ever choose to create new routes or rename files in <code>src/pages</code>, those changes should be reflected in <code>routing.ts</code>.</p>
+<h3><a class="anchor" aria-hidden="true" id="robotstxt-https-githubcom-kandelborg-mona-starter-kit-blob-master-static-robotstxt"></a><a href="#robotstxt-https-githubcom-kandelborg-mona-starter-kit-blob-master-static-robotstxt" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/Kandelborg/MoNA-starter-kit/blob/master/static/robots.txt">robots.txt</a></h3>
+<p>New or deleted pages, and edited page names should be reflected here.</p>
+<ul>
+<li>Change URL of sitemap to app domain according to the <code>DOMAIN</code> env variable in <code>.env</code></li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="packagejson-https-githubcom-kandelborg-mona-starter-kit-blob-master-packagejson"></a><a href="#packagejson-https-githubcom-kandelborg-mona-starter-kit-blob-master-packagejson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/Kandelborg/MoNA-starter-kit/blob/master/package.json">package.json</a></h3>
+<p>Personalize package.json to fit your project:</p>
+<ul>
+<li>Name</li>
+<li>Author</li>
+<li>Description</li>
+<li>Repository</li>
+</ul>
+<hr>
+<h2><a class="anchor" aria-hidden="true" id="api"></a><a href="#api" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>API</h2>
+<h3><a class="anchor" aria-hidden="true" id="envexample-https-githubcom-kandelborg-kats-blob-master-envexample"></a><a href="#envexample-https-githubcom-kandelborg-kats-blob-master-envexample" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/Kandelborg/KATS/blob/master/.env.example">.env.example</a></h3>
+<ul>
+<li>Ignore this file by renaming to <code>.env</code></li>
+</ul>
+<blockquote>
+<p><strong>Never commit sensitive information to versioning software</strong> - use other means of sharing sensitive information like <a href="https://bitwarden.com/">Bitwarden</a></p>
+</blockquote>
+<table>
+<thead>
+<tr><th>Variable</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>ALLOWED_DOMAINS</td><td>List of CORS enabled URLs</td></tr>
+<tr><td><strong>Cloudinary Variables:</strong></td><td>-------------------------------------------------</td></tr>
+<tr><td>CLOUDINARY_API_KEY</td><td>API key</td></tr>
+<tr><td>CLOUDINARY_API_SECRET</td><td>Secret API key</td></tr>
+<tr><td>CLOUD_NAME</td><td>Name of account space</td></tr>
+<tr><td>PRESET</td><td>Name of <strong>signed</strong> preset</td></tr>
+</tbody>
+</table>
+<h3><a class="anchor" aria-hidden="true" id="packagejson-https-githubcom-kandelborg-kats-blob-master-packagejson"></a><a href="#packagejson-https-githubcom-kandelborg-kats-blob-master-packagejson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/Kandelborg/KATS/blob/master/package.json">package.json</a></h3>
+<p>Personalize package.json to fit your project:</p>
+<ul>
+<li>Name</li>
+<li>Author</li>
+<li>Description</li>
+<li>Repository</li>
+</ul>
+<hr>
+<blockquote>
+<p>Changes in the configuration directory is only needed when deploying. There's no need to configure here if you're getting started for development.</p>
+</blockquote>
+<p>If you're already happy with your editor or really want to start developing, go follow the <a href="/docs/en/usage/maintaining-a-project">maintaining a project</a> guide.
+Yeah, that's right! We've finally come to a point where the project is our own.</p>
+<p>If you're interested in getting properly started with a project, go read the <a href="setup/editor">editor</a> and <a href="setup/development">development</a> pages in this section.</p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 4/3/2019 by Mathias Wøbbe</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/en/setup/accounts"><span class="arrow-prev">← </span><span>Accounts</span></a><a class="docs-next button" href="/docs/en/setup/editor"><span>Editor</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#website">Website</a><ul class="toc-headings"><li><a href="#envexample-https-githubcom-kandelborg-mona-starter-kit-blob-master-envexample">.env.example</a></li><li><a href="#manifestjson-https-githubcom-kandelborg-mona-starter-kit-blob-master-static-manifestjson">manifest.json</a></li><li><a href="#routingts-https-githubcom-kandelborg-mona-starter-kit-blob-master-server-routingts">routing.ts</a></li><li><a href="#robotstxt-https-githubcom-kandelborg-mona-starter-kit-blob-master-static-robotstxt">robots.txt</a></li><li><a href="#packagejson-https-githubcom-kandelborg-mona-starter-kit-blob-master-packagejson">package.json</a></li></ul></li><li><a href="#api">API</a><ul class="toc-headings"><li><a href="#envexample-https-githubcom-kandelborg-kats-blob-master-envexample">.env.example</a></li><li><a href="#packagejson-https-githubcom-kandelborg-kats-blob-master-packagejson">package.json</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/mona-no-fill.svg" alt="MoNA" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/setup/installation">Getting Started</a><a href="/docs/en/features/overview">Features</a><a href="/docs/en/setup/prerequisites">Requirements</a></div><div><h5>Community</h5><a href="https://spectrum.chat/mona" target="_blank" rel="noreferrer noopener">Project Chat</a><a href="http://stackoverflow.com/questions/tagged/mona" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/Kandelborg/mona-starter-kit/" target="_blank" rel="noreferrer noopener">GitHub</a><a class="github-button" href="https://github.com/Kandelborg/Docs" data-icon="octicon-star" data-count-href="/MathiasKandelborg/MoNA-starter-kit/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Mathias Kandelborg</section></footer></div></body></html>
