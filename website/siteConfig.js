@@ -23,14 +23,6 @@ const users = [
 const siteConfig = {
   title: 'MoNA', // Title for your website.
   tagline: 'A Secure, Fully-Fledged TS Starter Kit',
-  // For github.io type URLs, you would set the url and baseUrl like:
-  baseUrl: '/docs/',
-
-  projectName: 'Docs',
-  organizationName: 'Kandelborg',
-  url: 'https://kandelborg.github.io',
-  repoUrl: 'https://github.com/Kandelborg/Docs',
-
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
     { doc: 'what-is-mona', label: 'Docs' },
@@ -38,33 +30,32 @@ const siteConfig = {
     { blog: true, label: 'Blog' }
   ],
 
-  // If you have users set above, you add it here:
-  // users,
+  baseUrl: '/Docs/',
+  organizationName: 'Kandelborg',
+  projectName: 'Docs',
+  repoUrl: 'https://github.com/Kandelborg/MoNA-starter-kit', // Stargazers on MoNA stater-kit repo
+  url: 'https://kandelborg.github.io',
 
-  /* path to images for header/footer */
+  // Open Graph and Twitter card images.
+  ogImage: 'img/mona.png',
+  twitterImage: 'img/mona.png',
+
+  // If you have users set above, you add it here:
+  users,
+
   headerIcon: 'img/mona.svg',
   footerIcon: 'img/mona-no-fill.svg',
   favicon: 'img/favicon/favicon.ico',
 
-  /* Colors for website */
   colors: {
     primaryColor: '#005cb2',
     secondaryColor: '#01a9f4'
   },
 
-  /* Custom fonts for website */
-  /*
   fonts: {
-    myFont: [
-      "Times New Roman",
-      "Serif"
-    ],
-    myOtherFont: [
-      "-apple-system",
-      "system-ui"
-    ]
-    },
-  */
+    myFont: ['Times New Roman', 'Serif'],
+    myOtherFont: ['-apple-system', 'system-ui']
+  },
 
   // This copyright info is used in /core/Footer.js and blog RSS/Atom feeds.
   copyright: `Copyright © ${new Date().getFullYear()} Mathias Kandelborg`,
@@ -84,18 +75,12 @@ const siteConfig = {
 
   // No .html extensions for paths.
   cleanUrl: true,
-
-  // Open Graph and Twitter card images.
-  ogImage: 'img/mona.png',
-  twitterImage: 'img/mona.png',
-
   // Show documentation's last contributor's name.
   enableUpdateBy: true,
-
   // Show documentation's last update time.
-  enableUpdateTime: true
-
-  // You may provide arbitrary config keys to be used as needed by your
+  enableUpdateTime: true,
+  scrollToTop: true,
+  docsSideNavCollapsible: true
 }
 
 module.exports = siteConfig
