@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>MoNA Has Officially Launched! · MoNA</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Yaaay! After having spent months on planning, keeping updated and putting the pieces together... and having spent tens of hours on documentation, it&#x27;s finally ready!"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="MoNA Has Officially Launched! · MoNA"/><meta property="og:type" content="website"/><meta property="og:url" content="https://kandelborg.github.io/Docs/blog/2019/04/05/MoNA-has-officially-launched"/><meta property="og:description" content="Yaaay! After having spent months on planning, keeping updated and putting the pieces together... and having spent tens of hours on documentation, it&#x27;s finally ready!"/><meta property="og:image" content="https://kandelborg.github.io/Docs/img/mona.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://kandelborg.github.io/Docs/img/mona.png"/><link rel="shortcut icon" href="/Docs/img/favicon/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs2015.min.css"/><link rel="alternate" type="application/atom+xml" href="https://kandelborg.github.io/Docs/blog/atom.xml" title="MoNA Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://kandelborg.github.io/Docs/blog/feed.xml" title="MoNA Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/js/code-block-buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/Docs/css/main.css"/><script src="/Docs/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/Docs/en"><img class="logo" src="/Docs/img/mona.svg" alt="MoNA"/><h2 class="headerTitleWithLogo">MoNA</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/Docs/docs/en/what-is-mona" target="_self">Docs</a></li><li class=""><a href="/Docs/docs/en/usage/maintaining-a-project" target="_self">Usage</a></li><li class="siteNavGroupActive"><a href="/Docs/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">Recent Posts<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem navListItemActive"><a class="navItem" href="/Docs/blog/2019/04/05/MoNA-has-officially-launched">MoNA Has Officially Launched!</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/Docs/blog/2019/04/05/MoNA-has-officially-launched">MoNA Has Officially Launched!</a></h1><p class="post-meta">April 5, 2019</p><div class="authorBlock"><p class="post-authorName"><a href="https://twitter.com/kandelborg" target="_blank" rel="noreferrer noopener">Mathias Wøbbe</a></p></div></header><div><span><p>Yaaay! After having spent months on planning, keeping updated and putting the pieces together... and having spent tens of hours on documentation, it's finally ready!</p>
+<p><code>MoNA</code>, <code>KATS</code> and <code>configuration</code> are three repositories living together.</p>
+<ul>
+<li><a href="https://github.com/Kandelborg/MoNA-starter-kit">MoNA</a> is a Next.js Apollo with MUI starter</li>
+<li><a href="https://github.com/Kandelborg/KATS">KATS</a> is a Prisma API starter</li>
+<li><a href="https://github.com/Kandelborg/MoNA-configuration">configuration</a> is the essential part of setting up servers and deploying the applications</li>
+</ul>
+<p>There's is probably mistakes everywhere, so the next couple of days are going to be about fixing typos, refactoring to reflect current conventions, and sweeping everything else under the rug.
+Or maybe not, the Codeclimate issues badge in the readme reads all current issues, not regarding their current status - this leads me to the conclusion that they have to be properly fixed.
+This is going to happen mostly via configuration settings, as most of the duplication errors aren't actual duplicates, but the <a href="https://docs.codeclimate.com/docs/duplication#section-per-language-mass-threshold-defaults">the settings</a> are by default too low.</p>
+<p>Some code still needs to be refactored, or completely re-done in MoNA, as this project has lived through a refactoring from class-based components to hooks and Material-UI v3 -&gt; v4.
+Some components are just badly written right now. That's the first thing to go about, then I'll start looking at that duplication issues.</p>
+<p>I'll celebrate this release by looking at a bunch of things to fix and start fixing them.</p>
+<p>That sums it up for the first blog post for MoNA. I'm so pumped to see what the future brings!</p>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="/Docs/blog">Recent Posts</a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/Docs/" class="nav-home"><img src="/Docs/img/mona-no-fill.svg" alt="MoNA" width="66" height="58"/></a><div><h5>Docs</h5><a href="/Docs/docs/en/setup/installation">Getting Started</a><a href="/Docs/docs/en/features/overview">Features</a><a href="/Docs/docs/en/setup/prerequisites">Requirements</a></div><div><h5>Community</h5><a href="https://spectrum.chat/mona" target="_blank" rel="noreferrer noopener">Project Chat</a><a href="http://stackoverflow.com/questions/tagged/mona" target="_blank" rel="noreferrer noopener">Stack Overflow</a></div><div><h5>More</h5><a href="/Docs/blog">Blog</a><a href="https://github.com/Kandelborg/mona-starter-kit/" target="_blank" rel="noreferrer noopener">GitHub</a><a class="github-button" href="https://github.com/Kandelborg/MoNA-starter-kit" data-icon="octicon-star" data-count-href="/MathiasKandelborg/MoNA-starter-kit/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2019 Mathias Kandelborg</section></footer></div></body></html>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>MoNA Blog</title>
+        <link>https://kandelborg.github.io/Docs/blog</link>
+        <description>The best place to stay up-to-date with the latest MoNA news and events.</description>
+        <lastBuildDate>Fri, 05 Apr 2019 06:00:00 GMT</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>Feed for Node.js</generator>
+        <image>
+            <title>MoNA Blog</title>
+            <url>https://kandelborg.github.io/Docs/img/mona.svg</url>
+            <link>https://kandelborg.github.io/Docs/blog</link>
+        </image>
+        <copyright>Copyright © 2019 Mathias Kandelborg</copyright>
+        <item>
+            <title><![CDATA[MoNA Has Officially Launched!]]></title>
+            <link>https://kandelborg.github.io/Docs/blog/2019/04/05/MoNA-has-officially-launched.html</link>
+            <guid>https://kandelborg.github.io/Docs/blog/2019/04/05/MoNA-has-officially-launched.html</guid>
+            <pubDate>Fri, 05 Apr 2019 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Yaaay! After having spent months on planning, keeping updated and putting the pieces together... and having spent tens of hours on documentation, it's finally ready!</p> <p><code>MoNA</code>, <code>KATS</code> and <code>configuration</code> are three repositories living together.</p> <ul> <li><a href="https://github.com/Kandelborg/MoNA-starter-kit">MoNA</a> is a Next...</li></ul>]]></description>
+        </item>
+    </channel>
+</rss>

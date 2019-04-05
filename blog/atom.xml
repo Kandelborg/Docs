@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://kandelborg.github.io/Docs/blog</id>
+    <title>MoNA Blog</title>
+    <updated>2019-04-05T06:00:00Z</updated>
+    <generator>Feed for Node.js</generator>
+    <link rel="alternate" href="https://kandelborg.github.io/Docs/blog"/>
+    <subtitle>The best place to stay up-to-date with the latest MoNA news and events.</subtitle>
+    <logo>https://kandelborg.github.io/Docs/img/mona.svg</logo>
+    <rights>Copyright © 2019 Mathias Kandelborg</rights>
+    <entry>
+        <title type="html"><![CDATA[MoNA Has Officially Launched!]]></title>
+        <id>https://kandelborg.github.io/Docs/blog/2019/04/05/MoNA-has-officially-launched.html</id>
+        <link href="https://kandelborg.github.io/Docs/blog/2019/04/05/MoNA-has-officially-launched.html">
+        </link>
+        <updated>2019-04-05T06:00:00Z</updated>
+        <summary type="html"><![CDATA[<p>Yaaay! After having spent months on planning, keeping updated and putting the pieces together... and having spent tens of hours on documentation, it's finally ready!</p> <p><code>MoNA</code>, <code>KATS</code> and <code>configuration</code> are three repositories living together.</p> <ul> <li><a href="https://github.com/Kandelborg/MoNA-starter-kit">MoNA</a> is a Next...</li></ul>]]></summary>
+        <author>
+            <name>Mathias Wøbbe</name>
+            <uri>https://twitter.com/kandelborg</uri>
+        </author>
+    </entry>
+</feed>
